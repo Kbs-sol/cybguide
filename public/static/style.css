@@ -1,0 +1,658 @@
+/* CYB Guide Custom Styles */
+
+/* Matrix-style animation for background */
+@keyframes matrix-rain {
+    0% { transform: translateY(-100vh); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #10b981;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #059669;
+}
+
+/* Smooth animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Hacker terminal effect */
+.terminal-text {
+    font-family: 'Courier New', monospace;
+    color: #10b981;
+    text-shadow: 0 0 5px #10b981;
+}
+
+/* Glowing borders */
+.glow-border {
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+    border: 1px solid #10b981;
+}
+
+.glow-border:hover {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+}
+
+/* Code block styling */
+.code-block {
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 16px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-x: auto;
+    position: relative;
+}
+
+.code-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #10b981, #06d6a0, #10b981);
+    border-radius: 8px 8px 0 0;
+}
+
+/* Navigation hover effects */
+.nav-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.nav-item:hover::before {
+    left: 100%;
+}
+
+/* Button pulse effect */
+.btn-pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* Loading spinner */
+.spinner {
+    border: 2px solid #374151;
+    border-top: 2px solid #10b981;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Typing effect for AI responses */
+.typing-effect {
+    border-right: 2px solid #10b981;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(40, end), blink-caret 0.5s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #10b981; }
+}
+
+/* Status indicators */
+.status-online {
+    position: relative;
+}
+
+.status-online::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+    0% { transform: scale(0.8); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+    100% { transform: scale(0.8); opacity: 1; }
+}
+
+/* Modal backdrop blur */
+.modal-backdrop {
+    backdrop-filter: blur(8px);
+}
+
+/* Syntax highlighting for code examples */
+.highlight {
+    color: #f59e0b;
+}
+
+.command {
+    color: #06d6a0;
+    font-weight: bold;
+}
+
+.comment {
+    color: #6b7280;
+    font-style: italic;
+}
+
+.string {
+    color: #f87171;
+}
+
+/* Responsive grid for cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Hover effect for interactive elements */
+.interactive-hover {
+    transition: all 0.3s ease;
+}
+
+.interactive-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2);
+}
+
+/* Progress bars */
+.progress-bar {
+    background-color: #374151;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 8px;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #10b981, #06d6a0);
+    height: 100%;
+    transition: width 0.8s ease-out;
+    border-radius: 4px;
+}
+
+/* Notification styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    max-width: 400px;
+    padding: 16px;
+    border-radius: 8px;
+    color: white;
+    z-index: 1000;
+    animation: slideInRight 0.3s ease-out;
+}
+
+.notification.success {
+    background-color: #059669;
+    border-left: 4px solid #10b981;
+}
+
+.notification.error {
+    background-color: #dc2626;
+    border-left: 4px solid #ef4444;
+}
+
+.notification.warning {
+    background-color: #d97706;
+    border-left: 4px solid #f59e0b;
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Mobile responsiveness improvements */
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .code-block {
+        font-size: 12px;
+        padding: 12px;
+    }
+    
+    .notification {
+        left: 20px;
+        right: 20px;
+        max-width: none;
+    }
+}
+
+/* Dark mode enhancements */
+body.dark {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+/* Custom focus styles for accessibility */
+*:focus {
+    outline: 2px solid #10b981;
+    outline-offset: 2px;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* Loading states */
+.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #374151;
+    border-top: 2px solid #10b981;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Error states */
+.error-state {
+    color: #ef4444;
+    border-color: #dc2626;
+}
+
+.error-message {
+    background-color: rgba(220, 38, 38, 0.1);
+    color: #fca5a5;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #dc2626;
+    margin-top: 8px;
+}
+
+/* Success states */
+.success-state {
+    color: #10b981;
+    border-color: #059669;
+}
+
+.success-message {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #6ee7b7;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #059669;
+    margin-top: 8px;
+}
+
+/* ===== NEW STYLES FOR ENHANCED CYB GUIDE ===== */
+
+/* Konami code activation effect */
+.konami-activated {
+    animation: konamiFlash 2s ease-out;
+}
+
+@keyframes konamiFlash {
+    0% { filter: hue-rotate(0deg); }
+    25% { filter: hue-rotate(90deg); }
+    50% { filter: hue-rotate(180deg); }
+    75% { filter: hue-rotate(270deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+/* Assessment quiz styles */
+.quiz-option {
+    transition: all 0.3s ease;
+}
+
+.quiz-option:hover {
+    background-color: #374151;
+    transform: translateX(4px);
+}
+
+.quiz-option input:checked + span {
+    color: #10b981;
+    font-weight: 600;
+}
+
+/* Terminal styles */
+.terminal-history {
+    font-family: 'Monaco', 'Menlo', 'Consolas', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.terminal-input {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    color: #10b981;
+    font-family: 'Monaco', 'Menlo', 'Consolas', 'Courier New', monospace;
+}
+
+.terminal-input::placeholder {
+    color: #6b7280;
+}
+
+/* Terminal cursor effect */
+.terminal-cursor::after {
+    content: '█';
+    animation: blink 1s infinite;
+    color: #10b981;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Learning card animations */
+.learning-card {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.learning-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.1), transparent);
+    transition: left 0.6s;
+}
+
+.learning-card:hover::before {
+    left: 100%;
+}
+
+.learning-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(16, 185, 129, 0.2);
+}
+
+.learning-card[data-completed="true"] {
+    background-color: rgba(16, 185, 129, 0.1);
+    border-color: #059669;
+}
+
+/* Timeline styles */
+.timeline-item {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateX(8px);
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 24px;
+    width: 24px;
+    height: 2px;
+    background-color: #10b981;
+    z-index: 10;
+}
+
+/* Channel styles for community */
+.channel-item {
+    transition: all 0.2s ease;
+}
+
+.channel-item:hover {
+    background-color: #374151;
+    padding-left: 16px;
+}
+
+/* Message styles */
+.message {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(55, 65, 81, 0.3);
+    transition: background-color 0.2s ease;
+}
+
+.message:hover {
+    background-color: rgba(55, 65, 81, 0.2);
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin: 0 -12px;
+}
+
+/* Event filter tabs */
+.event-tab {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.event-tab:hover {
+    transform: translateY(-2px);
+}
+
+.event-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #10b981;
+    border-radius: 1px;
+}
+
+/* Pathway display styles */
+#user-pathway {
+    animation: slideInDown 0.6s ease-out;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 214, 160, 0.05));
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Progress bar enhancements */
+#progress-bar {
+    background: linear-gradient(90deg, #10b981, #06d6a0, #10b981);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Secret admin button */
+#secret-admin-btn {
+    animation: secretPulse 3s infinite;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+@keyframes secretPulse {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+    }
+    50% { 
+        transform: scale(1.1);
+        box-shadow: 0 0 30px rgba(16, 185, 129, 0.6);
+    }
+}
+
+/* Notification slide animation */
+#konami-notification {
+    animation: slideInNotification 0.5s ease-out;
+}
+
+@keyframes slideInNotification {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Matrix-style background for terminal */
+.terminal-bg {
+    position: relative;
+    background: #000;
+}
+
+.terminal-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(16, 185, 129, 0.1) 2px, transparent 2px),
+        radial-gradient(circle at 75% 75%, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* Enhanced button styles */
+.btn-enhanced {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-enhanced:hover::before {
+    left: 100%;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Screen reader friendly animations */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .bg-gray-900 {
+        background-color: #000 !important;
+    }
+    
+    .text-gray-300 {
+        color: #fff !important;
+    }
+    
+    .border-gray-700 {
+        border-color: #fff !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .bg-gray-900, .bg-gray-800 {
+        background: white !important;
+        border: 1px solid black !important;
+    }
+}
